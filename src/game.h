@@ -22,7 +22,7 @@ extern int score;
 extern int gameOver;
 
 void setup();
-void drawSnake(Snake snake);
+void draw(Snake snake);
 void handleInput(Snake *snake);
 void updateLogic(Snake *snake);
 void generateFood();
