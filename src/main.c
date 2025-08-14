@@ -1,16 +1,29 @@
 #include <time.h>
 #include <stdlib.h>
 
-#define WIDTH 20
-#define HEIGHT 20
-
-typedef struct{
-   int x , y;
-} Point;
-
-
-
+#include "game.h"
 int main() {
-   printf("snake game");
-   return 0;
+  Snake snake;
+  
+
+  setup();
+
+  snake.length = 3;
+  snake.direction = 1; 
+  snake.body[0] = (Point){WIDTH / 2, HEIGHT / 2};
+  snake.body[1] = (Point){WIDTH / 2 - 1, HEIGHT / 2};
+  snake.body[2] = (Point){WIDTH / 2 - 2, HEIGHT / 2};
+  
+  generateFood();
+
+  while(!gameOver){
+    draw(snake);
+    handleInput(&snake);
+    updateLogic(&snake);
+    usleep(150000);
+  }
+
+  printf("Game Over! Your final score was: %d\n", score);
+  
+  return 0;
 }
