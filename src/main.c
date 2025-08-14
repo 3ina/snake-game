@@ -1,4 +1,5 @@
-#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 
 #define WIDTH 20
 #define HEIGHT 20
