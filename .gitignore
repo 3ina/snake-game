@@ -4,7 +4,7 @@
 ### C ###
 # Prerequisites
 *.d
-
+./src/my_game
 # Object files
 *.o
 *.ko
